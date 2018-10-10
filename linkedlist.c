@@ -2,22 +2,24 @@
 #include <stdio.h>
 #include "linkedlist.h"
 
-void print_list(struct node *current){
-	if (current==NULL)
-		return;
+void print_list(struct node *list){
+	struct node *current = list;
 	printf("[");
-  while (current){
-    printf("%d ",current->i);
-    current = current->next;
-  }
-  printf("]\n");
+	while (current){
+		if (current->next==NULL){
+			printf("%d]\n",current->i);
+			return ;
+		}
+		printf("%d ",current->i);
+		current = current->next;
+	}
 }
 
 struct node * insert_front(struct node *first, int new){
-  struct node *new_node = (struct node*)malloc(sizeof(struct node));
-  new_node->i = new;
-  new_node->next = first;
-  return new_node;
+	struct node *new_node = (struct node*)malloc(sizeof(struct node));
+	new_node->i = new;
+	new_node->next = first;
+	return new_node;
 }
 
 struct node * free_list(struct node * list){
