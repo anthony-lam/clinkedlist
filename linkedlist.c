@@ -1,3 +1,4 @@
+
 #include <stdlib.h>
 #include <stdio.h>
 #include "linkedlist.h"
@@ -6,13 +7,10 @@ void print_list(struct node *list){
 	struct node *current = list;
 	printf("[");
 	while (current){
-		if (current->next==NULL){
-			printf("%d]\n",current->i);
-			return ;
-		}
 		printf("%d ",current->i);
 		current = current->next;
 	}
+printf("]\n");
 }
 
 struct node * insert_front(struct node *first, int new){

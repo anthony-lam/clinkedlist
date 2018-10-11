@@ -12,7 +12,7 @@ int main(){
 	}
 	printf("Added numbers from 9 to 1\n");
 	print_list(test);
-	free_list(test);
+	test=free_list(test);
 	printf("Freed list\n");
 	print_list(test);
 	return 0;
